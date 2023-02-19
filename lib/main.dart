@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Screens/AlignmentPage.dart';
 import 'package:flutter_application_1/Screens/ContainerPage.dart';
 import 'package:flutter_application_1/Screens/Dashboard.dart';
 import 'package:flutter_application_1/Screens/Home.dart';
