@@ -1,4 +1,4 @@
-// ignore_for_file: sort_child_properties_last
+// ignore_for_file: sort_child_properties_last, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
@@ -26,6 +26,19 @@ class HomePage extends StatelessWidget {
         //   fit: BoxFit.cover,
         // ),
       ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.call_missed),
+        onPressed: null,
+        backgroundColor: Colors.amber,
+      ),
+      bottomNavigationBar: BottomNavigationBar(items: [
+        BottomNavigationBarItem(icon: Icon(Icons.account_circle),label: 'Home'),
+        BottomNavigationBarItem(icon: Icon(Icons.account_balance),label: 'balance'),
+        BottomNavigationBarItem(icon: Icon(Icons.search),label: 'Search'),
+      ],
+      onTap: (int i){
+        debugPrint('Clicked on ${i+1}');
+      },),
       backgroundColor: Colors.redAccent.shade100,
       body:Center(
         child: Column(
