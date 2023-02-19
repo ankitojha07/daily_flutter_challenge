@@ -37,7 +37,15 @@ class HomePage extends StatelessWidget {
             ),
           ElevatedButton(
           child:Text('Lets Begin', style: TextStyle(color: Colors.black),),
-          onPressed: (){},
+          onPressed: (){
+            final snackBar = SnackBar(content: Text('Started...'),
+            action: SnackBarAction(
+              label: 'Undo',
+              onPressed: (){},
+            ),
+            );
+            ScaffoldMessenger.of(context).showSnackBar(snackBar);
+          },
           style: ElevatedButton.styleFrom(
             padding: EdgeInsets.all(20.0),
             elevation: 12,
