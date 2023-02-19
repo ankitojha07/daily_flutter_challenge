@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Screens/Dashboard.dart';
+import 'package:flutter_application_1/Screens/Iconspage.dart';
 import 'package:flutter_application_1/Screens/Imagepage.dart';
 
 void main() => runApp(MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'My App',
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
-      home: ImagePage(),
+      home: Iconpage(),
     );
   }
 }
