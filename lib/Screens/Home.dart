@@ -11,7 +11,6 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(icon: Icon(Icons.menu), onPressed: (){},),
         title: Text('Home Page'),
         actions:<Widget> [
           IconButton(onPressed: (){}, icon: Icon(Icons.search)),
@@ -19,12 +18,42 @@ class HomePage extends StatelessWidget {
         ],
         elevation: 0,
         centerTitle: true,
-        backgroundColor: Colors.black87,
+        backgroundColor: Colors.pink.shade500,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(bottom: Radius.circular(20))),
         // flexibleSpace: Image(
         //   image: NetworkImage('https://pbs.twimg.com/media/FN3gTJ5akAMW-UX?format=jpg&name=900x900'),
         //   fit: BoxFit.cover,
         // ),
+      ),
+      drawer: Drawer(
+        backgroundColor: Colors.white,
+        child: ListView(
+          children: [
+            UserAccountsDrawerHeader(
+              decoration: BoxDecoration(
+              color: Colors.pink.shade500,
+    ),
+              accountName: Text('Ankit Ojha'), 
+              accountEmail: Text('ankitojha@gmail.com'),
+              currentAccountPicture: CircleAvatar(foregroundImage: AssetImage('images/logo.png'),),
+              
+              ),
+              ListTile(leading: Icon(Icons.home), title: Text('Home'),),
+              ListTile(leading: Icon(Icons.search), title: Text('Search'),),
+              ListTile(leading: Icon(Icons.shopping_bag), title: Text('Shopping'),),
+              ListTile(leading: Icon(Icons.logo_dev), title: Text('Developer Mode'),),
+
+              Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Text('Labels', style: TextStyle(fontWeight: FontWeight.bold),),
+              ),
+
+              ListTile(leading: Icon(Icons.home), title: Text('Home'),),
+              ListTile(leading: Icon(Icons.search), title: Text('Search'),),
+              ListTile(leading: Icon(Icons.shopping_bag), title: Text('Shopping'),),
+              ListTile(leading: Icon(Icons.logo_dev), title: Text('Developer Mode'),),
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.call_missed),
@@ -39,7 +68,7 @@ class HomePage extends StatelessWidget {
       onTap: (int i){
         debugPrint('Clicked on ${i+1}');
       },),
-      backgroundColor: Colors.redAccent.shade100,
+      backgroundColor: Colors.white,
       body:Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
