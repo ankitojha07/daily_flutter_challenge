@@ -9,6 +9,7 @@ import 'package:flutter_application_1/Screens/Iconspage.dart';
 import 'package:flutter_application_1/Screens/Imagepage.dart';
 import 'package:flutter_application_1/ui/BizCard.dart';
 import 'package:flutter_application_1/ui/ListBizz.dart';
+import 'package:flutter_application_1/ui/LoginPage.dart';
 
 void main() => runApp(MyApp());
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       title: 'My App',
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
-      home: BizzLiist(),
+      home: LoginPage(),
     );
   }
 }
