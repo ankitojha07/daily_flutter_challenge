@@ -10,10 +10,10 @@ class BizzLiist extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<String> entries = <String>['A', 'B', 'C','A', 'B', 'C'];
-final List<int> colorCodes = <int>[600, 500, 100,600, 500, 100];
+    final List<int> colorCodes = <int>[600, 500, 100,600, 500, 100];
     return Scaffold(
       body: ListView.separated(
-        itemCount: entries.length,
+        itemCount:15,
     itemBuilder: (BuildContext context, int index) {
       return Container(padding: EdgeInsets.all(20.0),
           height: 200.0,
