@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_application_1/auth/LoginPage.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -57,7 +58,11 @@ class HomePage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.call_missed),
-        onPressed: null,
+        onPressed: (){
+           Navigator.push(context,
+                            MaterialPageRoute(builder: (context)=> const LoginPage()));
+                          
+        },
         backgroundColor: Colors.amber,
       ),
       bottomNavigationBar: BottomNavigationBar(items: [

@@ -1,17 +1,15 @@
 // ignore_for_file: prefer_const_constructors, unused_import
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Screens/AlignmentPage.dart';
-import 'package:flutter_application_1/Screens/ContainerPage.dart';
-import 'package:flutter_application_1/Screens/Dashboard.dart';
-import 'package:flutter_application_1/Screens/Home.dart';
-import 'package:flutter_application_1/Screens/Iconspage.dart';
-import 'package:flutter_application_1/Screens/Imagepage.dart';
-import 'package:flutter_application_1/ui/BizCard.dart';
-import 'package:flutter_application_1/ui/ListBizz.dart';
-import 'package:flutter_application_1/ui/LoginPage.dart';
 
-void main() => runApp(MyApp());
+import 'Screens/SplashScreen.dart';
+import 'package:firebase_core/firebase_core.dart';
+
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MyApp());
+}
 
 
 class MyApp extends StatelessWidget {
@@ -19,11 +17,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return MaterialApp(
       title: 'My App',
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home: Splash(),
     );
   }
 }

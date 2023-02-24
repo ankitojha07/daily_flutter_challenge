@@ -1,10 +1,12 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, unnecessary_import, implementation_imports
+// ignore_for_file: prefer_const_literals_to_create_immutables, unnecessary_import, implementation_imports, use_build_context_synchronously, avoid_print
 
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_application_1/Screens/Home.dart';
-import 'package:flutter_application_1/ui/SignUp.dart';
+import 'package:flutter_application_1/auth/SignUp.dart';
+
+import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -14,6 +16,9 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final _auth = FirebaseAuth.instance;
+  String email = "";
+  String password = "";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,6 +54,9 @@ class _LoginPageState extends State<LoginPage> {
                           child: SizedBox(
                             height: 45,
                             child: TextField(
+                              onChanged: (value) {
+                                email = value;
+                              },
                               decoration: InputDecoration(
                                 border: OutlineInputBorder(),
                                 labelText: 'Email',
@@ -61,6 +69,9 @@ class _LoginPageState extends State<LoginPage> {
                           child: SizedBox(
                             height: 45,
                             child: TextField(
+                              onChanged: (value) {
+                                email = value;
+                              },
                               obscureText: true,
                               enableSuggestions: false,
                               autocorrect: false,
@@ -78,22 +89,34 @@ class _LoginPageState extends State<LoginPage> {
                               minimumSize: Size(300, 45),
                               onSurface: Colors.red,
                             ),
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const HomePage()));
+                            onPressed: () async {
+                              try {
+                                final user =
+                                    await _auth.signInWithEmailAndPassword(
+                                        email: email, password: password);
+                                if (user != null) {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const HomePage()));
+                                }
+                              } catch (e) {
+                                print(e);
+                              }
                             },
                             child: Text('Login'),
                           ),
                         ),
                         TextButton(
-                          onPressed: (){
-                            Navigator.push(context,
-                            MaterialPageRoute(builder: (context)=> const SignUp()));
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const SignUp()));
                           },
                           child: Text('Don\'t have an account?'),
-                  ),
+                        ),
                       ],
                     ),
                   ],
