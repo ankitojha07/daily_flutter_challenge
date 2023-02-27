@@ -59,9 +59,7 @@ class HomePage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.call_missed),
         onPressed: (){
-           Navigator.push(context,
-                            MaterialPageRoute(builder: (context)=> const LoginPage()));
-                          
+           Navigator.push(context, MaterialPageRoute(builder: (context)=> const LoginPage()));
         },
         backgroundColor: Colors.amber,
       ),

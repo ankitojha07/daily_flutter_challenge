@@ -7,6 +7,7 @@ import 'package:flutter_application_1/Screens/Home.dart';
 import 'package:flutter_application_1/auth/SignUp.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -17,8 +18,8 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final _auth = FirebaseAuth.instance;
-  String email = "";
-  String password = "";
+  late String _email;
+  late String password;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,7 +56,7 @@ class _LoginPageState extends State<LoginPage> {
                             height: 45,
                             child: TextField(
                               onChanged: (value) {
-                                email = value;
+                                _email = value;
                               },
                               decoration: InputDecoration(
                                 border: OutlineInputBorder(),
@@ -70,7 +71,7 @@ class _LoginPageState extends State<LoginPage> {
                             height: 45,
                             child: TextField(
                               onChanged: (value) {
-                                email = value;
+                                password = value;
                               },
                               obscureText: true,
                               enableSuggestions: false,
@@ -92,15 +93,23 @@ class _LoginPageState extends State<LoginPage> {
                             onPressed: () async {
                               try {
                                 final user =
-                                    await _auth.signInWithEmailAndPassword(
-                                        email: email, password: password);
+                                await _auth.signInWithEmailAndPassword(
+                                        email: _email, password: password);
                                 if (user != null) {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              const HomePage()));
+
+                                  SharedPreferences pref =await SharedPreferences.getInstance();
+                                  pref.setString("email", _email);
+                                  Navigator.pushNamed(context, '/home');
                                 }
+                                final snackBar = SnackBar(content: Text('Wrong Password...'),
+                                  action: SnackBarAction(
+                                    label: 'Try Again!',
+                                    onPressed: (){
+                                      Navigator.pushNamed(context, '/Login');
+                                    },
+                                  ),
+                                );
+                                ScaffoldMessenger.of(context).showSnackBar(snackBar);
                               } catch (e) {
                                 print(e);
                               }
@@ -110,10 +119,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         TextButton(
                           onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const SignUp()));
+                            Navigator.pushNamed(context, '/signup');
                           },
                           child: Text('Don\'t have an account?'),
                         ),

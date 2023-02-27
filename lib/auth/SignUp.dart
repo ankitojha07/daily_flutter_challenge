@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_application_1/auth/LoginPage.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
 
 class SignUp extends StatefulWidget {
@@ -15,8 +15,8 @@ class SignUp extends StatefulWidget {
 
 class _SignUpState extends State<SignUp> {
   final _auth = FirebaseAuth.instance;
-  String email = "";
-  String password = "";
+  late String _email;
+  late String password;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,7 +53,7 @@ class _SignUpState extends State<SignUp> {
                             height: 45,
                             child: TextField(
                               onChanged: (value) {
-                                email = value;
+                                _email = value;
                               },
                               decoration: InputDecoration(
                                 border: OutlineInputBorder(),
@@ -87,14 +87,12 @@ class _SignUpState extends State<SignUp> {
                               minimumSize: Size(300, 45),
                               onSurface: Colors.red,
                             ),
-                            onPressed: () async {
+                            onPressed: ()  async {
                               try {
                                 final newUser =
-                                    await _auth.createUserWithEmailAndPassword(
-                                        email: email, password: password);
-                                if (newUser != null) {
-                                  Navigator.pushNamed(context, 'home_screen');
-                                }
+                                     await _auth.createUserWithEmailAndPassword(
+                                        email: _email, password: password);
+                                Navigator.pushNamed(context, 'home');
                               } catch (e) {
                                 print(e);
                               }
@@ -104,10 +102,7 @@ class _SignUpState extends State<SignUp> {
                         ),
                         TextButton(
                           onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const LoginPage()));
+                            Navigator.pushNamed(context, '/Login');
                           },
                           child: Text('Already have an account?'),
                         ),

@@ -25,7 +25,6 @@ class _SplashState extends State<Splash> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image(image: AssetImage('images/logo.png'), height: 200, width: 200,),
-            Text('Codeforcoffee', style: TextStyle(fontSize: 36, color: Colors.black, fontWeight: FontWeight.bold),),
           ],
         ),
       ),
