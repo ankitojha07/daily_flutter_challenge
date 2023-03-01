@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Screens/Home.dart';
 import 'package:flutter_application_1/auth/LoginPage.dart';
 import 'package:flutter_application_1/auth/SignUp.dart';
+import 'package:flutter_application_1/parsing_json/parse_json.dart';
 import 'package:flutter_application_1/ui/TipCalculator.dart';
 
 import 'Screens/SplashScreen.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
       title: 'My App',
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
-      home: TipCal(),
+      home: ParseJson(),
       routes:{
         '/signup' : (context)=> SignUp(),
         '/Login' : (context)=> LoginPage(),
