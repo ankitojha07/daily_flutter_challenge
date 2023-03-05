@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Screens/Home.dart';
 import 'package:flutter_application_1/auth/LoginPage.dart';
 import 'package:flutter_application_1/auth/SignUp.dart';
-import 'package:flutter_application_1/parsing_json/parse_json.dart';
+import 'package:flutter_application_1/ui/GlassMorphism.dart';
 
 
 void main(){
@@ -13,7 +13,7 @@ void main(){
   ErrorWidget.builder = (FlutterErrorDetails details){
     return const Material();
   };
-  
+
   runApp(MyApp());
 }
 
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       title: 'My App',
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
-      home: ParseJson(),
+      home: GlassMorphism(),
       routes:{
         '/signup' : (context)=> SignUp(),
         '/Login' : (context)=> LoginPage(),
