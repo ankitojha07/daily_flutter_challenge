@@ -10,7 +10,7 @@ class Splash extends StatefulWidget {
 
 class _SplashState extends State<Splash> {
 
-  SplashService splashService = new SplashService();
+  SplashService splashService = SplashService();
   
   @override
   void initState() {
@@ -23,7 +23,7 @@ class _SplashState extends State<Splash> {
       body: Center(
         child:Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          children: const [
             Image(image: AssetImage('images/logo.png'), height: 200, width: 200,),
           ],
         ),

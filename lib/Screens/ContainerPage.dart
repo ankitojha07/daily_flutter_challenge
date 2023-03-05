@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class ContainerDashboard extends StatelessWidget {
   const ContainerDashboard({Key? key}) : super(key: key);
@@ -20,7 +18,7 @@ class ContainerDashboard extends StatelessWidget {
             shape: BoxShape.circle,
             image: DecorationImage(
               image: AssetImage('images/logo.png')),
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                   color: Colors.tealAccent,
                   blurRadius: 7,

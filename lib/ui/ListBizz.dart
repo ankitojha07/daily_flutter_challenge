@@ -1,8 +1,5 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, unnecessary_import, implementation_imports
 
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class BizzLiist extends StatelessWidget {
   const BizzLiist({Key? key}) : super(key: key);
@@ -29,7 +26,7 @@ class BizzLiist extends StatelessWidget {
               Text('Helo Bizz Caed'),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
+                children: const [
                   Text('Ankit Ojha')
                 ],
               )

@@ -1,8 +1,6 @@
 // ignore_for_file: sort_child_properties_last, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_application_1/auth/LoginPage.dart';
 
 class HomePage extends StatelessWidget {

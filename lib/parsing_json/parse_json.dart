@@ -29,8 +29,8 @@ class _ParseJsonState extends State<ParseJson> {
     );
   }
   Future getData() async {
-    var data;
-    String url = "https://jsonplaceholder.typicode.com/posts";
+    Future data;
+    String url = 'https://jsonplaceholder.typicode.com/posts';
     Network network = Network(url);
     data = network.fetchData();
     print(data);
@@ -44,7 +44,7 @@ class Network {
   Network(this.url);
 
   Future fetchData() async {
-    print("$url");
+    print(url);
     final response = await get(Uri.parse(Uri.encodeFull(url)));
     if (response.statusCode == 200) {
       print(response.body[0]);

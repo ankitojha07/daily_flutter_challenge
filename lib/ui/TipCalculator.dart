@@ -12,11 +12,11 @@ class TipCal extends StatefulWidget {
 
 class _TipCalState extends State<TipCal> {
 
-  int _tipPercent = 0;
-  int _personCounter = 1;
+  final int _tipPercent = 0;
+  final int _personCounter = 1;
   double _billAmount = 0.0;
 
-  Color _purple = HexColor("#6908D6");
+  final Color _purple = HexColor('#6908D6');
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class _TipCalState extends State<TipCal> {
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
+                children: const [
                   Text('Total per person'),
                   Text('\$123',style: TextStyle(fontSize: 20.0 , fontWeight: FontWeight.bold),)
                 ],

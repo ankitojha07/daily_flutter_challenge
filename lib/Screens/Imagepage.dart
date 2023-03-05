@@ -5,7 +5,7 @@ class ImagePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const url = "https://images.indianexpress.com/2022/12/Shah-Rukh-Khan-Pathaan-Final-R-1.jpg";
+    const url = 'https://images.indianexpress.com/2022/12/Shah-Rukh-Khan-Pathaan-Final-R-1.jpg';
     return Scaffold(
       appBar: AppBar(
         title: Text('image Section'),

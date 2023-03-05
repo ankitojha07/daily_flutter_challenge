@@ -1,9 +1,5 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, unnecessary_import, implementation_imports
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class BizzCard extends StatelessWidget {
   const BizzCard({Key? key}) : super(key: key);
@@ -26,7 +22,7 @@ class BizzCard extends StatelessWidget {
               Text('Helo Bizz Caed'),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
+                children: const [
                   Text('Ankit Ojha')
                 ],
               )
