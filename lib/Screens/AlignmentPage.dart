@@ -1,4 +1,3 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 
@@ -14,7 +13,7 @@ class AlignmentPage extends StatelessWidget {
         child: Column(
           children: [
             Row(
-              children: [
+              children: const [
                 Expanded(child: Image(image: AssetImage('images/me.jpeg'))),
                 Expanded(flex:2,child: Image(image: AssetImage('images/me.jpeg'))),
                 Expanded(child: Image(image: AssetImage('images/me.jpeg'))),
@@ -32,22 +31,22 @@ class AlignmentPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Column(
-                    children: [
+                    children: const [
                       Icon(Icons.home, size: 30.0,),
                       Text('Home'),
                     ]),
                   Column(
-                    children: [
+                    children: const [
                       Icon(Icons.search ,size: 30.0,),
                       Text('Home'),
                     ]),
                   Column(
-                    children: [
+                    children: const [
                       Icon(Icons.shopping_bag, size: 30.0,),
                       Text('Home'),
                     ]),
                   Column(
-                    children: [
+                    children: const [
                       Icon(Icons.settings, size: 30.0,),
                       Text('Home'),
                     ]),

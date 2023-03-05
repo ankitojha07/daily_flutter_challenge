@@ -1,4 +1,3 @@
-// ignore_for_file: sort_child_properties_last, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/auth/LoginPage.dart';
@@ -55,13 +54,13 @@ class HomePage extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.call_missed),
         onPressed: (){
            Navigator.push(context, MaterialPageRoute(builder: (context)=> const LoginPage()));
         },
         backgroundColor: Colors.amber,
+        child: Icon(Icons.call_missed),
       ),
-      bottomNavigationBar: BottomNavigationBar(items: [
+      bottomNavigationBar: BottomNavigationBar(items: const [
         BottomNavigationBarItem(icon: Icon(Icons.account_circle),label: 'Home'),
         BottomNavigationBarItem(icon: Icon(Icons.account_balance),label: 'balance'),
         BottomNavigationBarItem(icon: Icon(Icons.search),label: 'Search'),
@@ -79,7 +78,6 @@ class HomePage extends StatelessWidget {
               onTap: () =>{debugPrint('Tapped....')},
             ),
           ElevatedButton(
-          child:Text('Lets Begin', style: TextStyle(color: Colors.black),),
           onPressed: (){
             final snackBar = SnackBar(content: Text('Started...'),
             action: SnackBarAction(
@@ -99,6 +97,7 @@ class HomePage extends StatelessWidget {
             ),
             shape: StadiumBorder()
           ),
+          child:Text('Lets Begin', style: TextStyle(color: Colors.black),),
       )
         ]),
       )

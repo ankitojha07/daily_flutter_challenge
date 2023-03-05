@@ -1,4 +1,3 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 
@@ -8,7 +7,7 @@ class Bizcard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(actions: [
+      appBar: AppBar(actions: const [
         Icon(Icons.access_alarms_outlined),
         Icon(Icons.access_alarms_outlined),
         Icon(Icons.access_alarms_outlined),
@@ -19,19 +18,19 @@ class Bizcard extends StatelessWidget {
             Row(
               children: [
                 Column(
-                  children: [
+                  children: const [
                     Icon(Icons.search),
                     Text('Search')
                   ],
                 ),
                 Column(
-                  children: [
+                  children: const [
                     Icon(Icons.search),
                     Text('Search')
                   ],
                 ),
                 Column(
-                  children: [
+                  children: const [
                     Icon(Icons.search),
                     Text('Search')
                   ],
