@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Screens/Home.dart';
 import 'package:flutter_application_1/auth/LoginPage.dart';
 import 'package:flutter_application_1/auth/SignUp.dart';
-import 'package:flutter_application_1/ui/GlassMorphism.dart';
+import 'package:flutter_application_1/ui/CoffeeShop.dart';
 
 
 void main(){
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       title: 'My App',
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
-      home: GlassMorphism(),
+      home: CoffeeShop(),
       routes:{
         '/signup' : (context)=> SignUp(),
         '/Login' : (context)=> LoginPage(),

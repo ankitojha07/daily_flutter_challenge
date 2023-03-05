@@ -17,6 +17,7 @@ dependencies:
   shared_preferences: ^2.0.18
   http: ^0.13.5
   flutter_launcher_icons: ^0.11.0
+  
 
 dev_dependencies:
   flutter_test:
@@ -37,6 +38,9 @@ flutter:
     - images/tree.jpg
     - images/street.jpg
     - images/streett.jpg
+    - images/coffeee.jpg
+    - images/coffee.jpg
+    - images/coffeeeshop.jpg
 
   # fonts:
   #   - family: Schyler
